@@ -1,0 +1,130 @@
+:root {
+    --background-body: rgb(111, 235, 23);
+    --background-caja: rgba(152, 243, 78, 0.762);
+    --border-caja: rgb(74, 191, 74);
+    --color-cajitas: rgb(39, 193, 31); 
+    --color-p: rgb(38, 155, 54);
+    --hover-color: rgb(13, 134, 17); 
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200vh;
+    margin: 0;
+    background-color: var(--background-body);
+}
+
+.caja {
+    background-color: var(--background-caja);
+    width: 90%; 
+    max-width: 700px; 
+    padding: 20px;
+    border: 1px solid var(--border-caja); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.3); 
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    transition: transform 0.3s ease; 
+    
+}
+
+.caja:hover{
+    transform: translate(-10px); 
+
+}
+
+.imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    grid-row: 1 / span 3;
+}
+
+.contenido {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.p {
+    background-color: var(--color-p);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.cajitas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.cajita {
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-cajitas);
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-decoration: none; 
+    color: rgb(255, 255, 255); 
+    font-weight: bold; 
+    transition: background-color 0.3s; 
+}
+
+.cajita img {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 8px; 
+}
+
+.cajita:hover {
+    background-color: var(--hover-color); 
+}
+
+@media screen and (max-width: 500px) {
+    .caja {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 700px) {
+    .caja {
+        grid-template-columns: 1fr; 
+}
+
+@media screen and (min-width: 764px) {
+    .caja {
+        grid-template-columns: 250px 1fr; 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .caja {
+        grid-template-columns: 300px 1fr;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .caja {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1750px) {
+    .caja {
+        width: 800px;
+    }
+}
+}
